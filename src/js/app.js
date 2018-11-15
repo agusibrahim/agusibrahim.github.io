@@ -1,3 +1,14 @@
+var OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "1ef04f07-c1d6-4120-bf6e-0faa94b46743",
+      autoRegister: false,
+      notifyButton: {
+        enable: true,
+      },
+    });
+  });
+
 /* sweetScroll load */
 document.addEventListener("DOMContentLoaded", function () {
   const sweetScroll = new SweetScroll({/* some options */});
