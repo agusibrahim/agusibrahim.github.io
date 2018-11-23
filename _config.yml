@@ -21,3 +21,9 @@ exclude: ['package.json', 'src' , 'node_modules']
 
 sitemap-force-include:
 - "/.well-known/*.json"
+
+defaults:
+  - scope:
+      path: ".well-known"
+    values:
+      image: false
