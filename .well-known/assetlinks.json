@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.agusibrahim.learn.deeplink",
+    "sha256_cert_fingerprints":
+    ["27:20:F4:21:CA:93:79:6F:54:08:58:53:F6:D2:94:39:70:92:55:D2:2B:3F:4F:17:F2:29:45:3B:39:1D:C6:00"]
+  }
+}]
