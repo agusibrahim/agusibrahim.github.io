@@ -17,7 +17,7 @@ gplus_username:  agusibrahim
 google-analytics:
   id: ""
 
-exclude: ['package.json' , 'node_modules','.well-known']
+exclude: ['package.json' , 'node_modules','.well-known','partner']
 
 defaults:
   - scope:
