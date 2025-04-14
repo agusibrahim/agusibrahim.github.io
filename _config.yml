@@ -19,9 +19,6 @@ google-analytics:
 
 exclude: ['package.json' , 'node_modules','.well-known']
 
-sitemap-force-include:
-- "/.well-known/*.json"
-
 defaults:
   - scope:
       path: ".well-known"
