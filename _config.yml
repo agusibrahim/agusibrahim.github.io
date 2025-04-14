@@ -17,7 +17,7 @@ gplus_username:  agusibrahim
 google-analytics:
   id: ""
 
-exclude: ['package.json' , 'node_modules']
+exclude: ['package.json' , 'node_modules','.well-known']
 
 sitemap-force-include:
 - "/.well-known/*.json"
