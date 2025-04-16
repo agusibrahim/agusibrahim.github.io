@@ -122,7 +122,7 @@
         // URL untuk berbagai platform
         const deeplink = isAndroid ? 'pergiyuks://partner.open?token=1234567890' 
                           : isiOS ? 'myapp://' 
-                          : '';
+                          : 'pergiyuks://partner.open?token=xxcccc';
         
         const downloadLink = isAndroid ? 'https://play.google.com/store/apps/details?id=app.travel.pergiyuks'
                              : isiOS ? 'https://apps.apple.com/id/app/pergiyuks/id6469695981'
@@ -163,20 +163,20 @@
                         window.location.href = downloadLink;
                     });
                 }
-            }, 1000);
+            }, 1500);
         }
 
         const launchApp = () => {
             // Coba buka deeplink
-            if(deeplink) 
+            // if(deeplink) 
             window.location.href = deeplink;
              
-            // Fallback untuk Android jika intent tidak bekerja
-            if(isAndroid) {
-                setTimeout(() => {
-                    window.location.href = downloadLink;
-                }, 250);
-            }
+            // // Fallback untuk Android jika intent tidak bekerja
+            // if(isAndroid) {
+            //     setTimeout(() => {
+            //         window.location.href = downloadLink;
+            //     }, 250);
+            // }
         }
 
         // Jalankan countdown
