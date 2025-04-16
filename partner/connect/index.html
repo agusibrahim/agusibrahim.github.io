@@ -142,12 +142,15 @@
             // Ganti tampilan countdown dengan button
             countdownContainer.innerHTML = `
                 <div class="button-container">
-                    <button class="launch-button" id="launchBtn">Buka Aplikasi</button>
+                    <a href="${deeplink}" class="launch-button" style="text-decoration: none;" id="launchBtn">Buka Aplikasi</a>
                 </div>
             `;
 
             // Tambahkan event listener untuk button
-            document.getElementById('launchBtn').addEventListener('click', launchApp);
+            document.getElementById('launchBtn').addEventListener('click', function(e) {
+                e.preventDefault();
+                launchApp();
+            });
             
             // Coba langsung launch aplikasi
             launchApp();
@@ -168,7 +171,6 @@
 
         const launchApp = () => {
             // Coba buka deeplink
-            // if(deeplink) 
             window.location.href = deeplink;
              
             // // Fallback untuk Android jika intent tidak bekerja
@@ -185,3 +187,4 @@
     </script>
 </body>
 </html>
+
