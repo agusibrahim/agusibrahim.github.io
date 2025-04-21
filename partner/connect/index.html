@@ -120,9 +120,9 @@
         const isiOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
         
         // URL untuk berbagai platform
-        const deeplink = isAndroid ? 'pergiyuks://partner.open?token=1234567890' 
+        const deeplink = isAndroid ? 'pergiyuks://open/partner/connect?token=abcd12345' 
                           : isiOS ? 'myapp://' 
-                          : 'pergiyuks://partner.open?token=xxcccc';
+                          : 'pergiyuks://open/partner/connect?token=xx123yyy';
         
         const downloadLink = isAndroid ? 'https://play.google.com/store/apps/details?id=app.travel.pergiyuks'
                              : isiOS ? 'https://apps.apple.com/id/app/pergiyuks/id6469695981'
