@@ -1,0 +1,131 @@
+<team id="165199" primaryStage="893610" primaryTournamentTemplate="8983" rssfeed="" name="Madura United" transfersPosition="-1" audiofeed="" audiofeed_mod="" leaguerank="15" ccode="IDN" gender="male" team_stats="true">
+  <matches>
+    <match lname="Liga 1" hTeam="Madura United" aTeam="Malut United" hId="165199" aId="1665351" aScore="1" hScore="1" lid="8983" stageid="893610" stage="1" status="F" sId="6" id="4582454" time="10.08.2024 10:30" venue="Gelora Madura Ratu Pamelingan Stadium"/>
+    <match lname="Liga 1" hTeam="Barito Putera" aTeam="Madura United" hId="418661" aId="165199" aScore="0" hScore="1" lid="8983" stageid="893610" stage="2" status="F" sId="6" id="4582444" time="16.08.2024 14:00" venue="Sultan Agung Stadium"/>
+    <match lname="Liga 1" hTeam="Madura United" aTeam="Persita" hId="165199" aId="165206" aScore="1" hScore="0" lid="8983" stageid="893610" stage="3" status="F" sId="6" id="4582426" time="24.08.2024 10:30" venue="Gelora Madura Ratu Pamelingan Stadium"/>
+    <match lname="Liga 1" hTeam="Persis Solo" aTeam="Madura United" hId="583034" aId="165199" aScore="0" hScore="4" lid="8983" stageid="893610" stage="4" status="F" sId="6" id="4582438" time="13.09.2024 14:00" venue="Manahan Stadium"/>
+    <match lname="Liga 1" hTeam="PSBS Biak Numfor" aTeam="Madura United" hId="585877" aId="165199" aScore="1" hScore="2" lid="8983" stageid="893610" stage="5" status="F" sId="6" id="4582462" time="17.09.2024 10:30" venue="Cendrawasih Stadium"/>
+    <match lname="Liga 1" hTeam="Dewa United FC" aTeam="Madura United" hId="585860" aId="165199" aScore="3" hScore="3" lid="8983" stageid="893610" stage="6" status="F" sId="6" id="4582486" time="21.09.2024 10:30" venue="Indomilk Arena"/>
+    <match lname="Liga 1" hTeam="Madura United" aTeam="Persib Bandung" hId="165199" aId="165196" aScore="2" hScore="2" lid="8983" stageid="893610" stage="7" status="F" sId="6" id="4582474" time="28.09.2024 14:00" venue="Gelora Madura Ratu Pamelingan Stadium"/>
+    <match lname="Liga 1" hTeam="PSM Makassar" aTeam="Madura United" hId="165198" aId="165199" aScore="0" hScore="2" lid="8983" stageid="893610" stage="8" status="F" sId="6" id="4582468" time="18.10.2024 14:00" venue="Batakan Stadium"/>
+    <match lname="Liga 1" hTeam="Madura United" aTeam="PSIS" hId="165199" aId="165202" aScore="0" hScore="2" lid="8983" stageid="893610" stage="9" status="F" sId="6" id="4582519" time="23.10.2024 10:30" venue="Gelora Madura Ratu Pamelingan Stadium"/>
+    <match lname="AFC Challenge League" hTeam="SP Falcons" aTeam="Madura United" hId="1689664" aId="165199" aScore="0" hScore="0" lid="9470" stageid="895172" stage="1" status="F" sId="6" id="4663870" time="27.10.2024 08:00"/>
+    <match lname="AFC Challenge League" hTeam="Madura United" aTeam="Svay Rieng" hId="165199" aId="542025" aScore="1" hScore="2" lid="9470" stageid="895172" stage="3" status="F" sId="6" id="4663872" time="02.11.2024 08:00"/>
+    <match lname="Liga 1" hTeam="Persija Jakarta" aTeam="Madura United" hId="165191" aId="165199" aScore="1" hScore="4" lid="8983" stageid="893610" stage="10" status="F" sId="6" id="4582493" time="06.11.2024 13:00" venue="Patriot Candrabhaga Stadium"/>
+    <match lname="Liga 1" hTeam="Madura United" aTeam="Arema" hId="165199" aId="165200" aScore="4" hScore="2" lid="8983" stageid="893610" stage="11" status="F" sId="6" id="4582495" time="21.11.2024 09:30" venue="Gelora Madura Ratu Pamelingan Stadium"/>
+    <match lname="Liga 1" hTeam="Madura United" aTeam="Persebaya Surabaya" hId="165199" aId="930525" aScore="2" hScore="1" lid="8983" stageid="893610" stage="12" status="F" sId="6" id="4582553" time="02.12.2024 13:00" venue="Gelora Madura Ratu Pamelingan Stadium"/>
+    <match lname="Liga 1" hTeam="Persik" aTeam="Madura United" hId="165197" aId="165199" aScore="0" hScore="1" lid="8983" stageid="893610" stage="13" status="F" sId="6" id="4582549" time="06.12.2024 09:30" venue="Brawijaya Stadium"/>
+    <match lname="Liga 1" hTeam="Madura United" aTeam="Semen Padang" hId="165199" aId="215564" aScore="1" hScore="0" lid="8983" stageid="893610" stage="14" status="F" sId="6" id="4582540" time="10.12.2024 09:30" venue="Gelora Madura Ratu Pamelingan Stadium"/>
+    <match lname="Liga 1" hTeam="Borneo Samarinda" aTeam="Madura United" hId="585858" aId="165199" aScore="0" hScore="5" lid="8983" stageid="893610" stage="15" status="F" sId="6" id="4582530" time="14.12.2024 13:00" venue="Segiri Stadium"/>
+    <match lname="Liga 1" hTeam="Madura United" aTeam="Bali United FC" hId="165199" aId="185751" aScore="1" hScore="2" lid="8983" stageid="893610" stage="16" status="F" sId="6" id="4582564" time="20.12.2024 09:30" venue="Gelora Madura Ratu Pamelingan Stadium"/>
+    <match lname="Liga 1" hTeam="PSS Sleman" aTeam="Madura United" hId="585847" aId="165199" aScore="0" hScore="4" lid="8983" stageid="893610" stage="17" status="F" sId="6" id="4582562" time="27.12.2024 13:00" venue="Maguwoharjo Stadium"/>
+    <match lname="Liga 1" hTeam="Malut United" aTeam="Madura United" hId="1665351" aId="165199" aScore="1" hScore="0" lid="8983" stageid="893610" stage="18" status="F" sId="6" id="4582573" time="10.01.2025 09:30" venue="Gelora Kie Raha"/>
+    <match lname="Liga 1" hTeam="Madura United" aTeam="Barito Putera" hId="165199" aId="418661" aScore="4" hScore="2" lid="8983" stageid="893610" stage="19" status="F" sId="6" id="4582584" time="18.01.2025 13:00" venue="Gelora Madura Ratu Pamelingan Stadium"/>
+    <match lname="Liga 1" hTeam="Persita" aTeam="Madura United" hId="165206" aId="165199" aScore="1" hScore="1" lid="8983" stageid="893610" stage="20" status="F" sId="6" id="4582618" time="24.01.2025 13:00" venue="Indomilk Arena"/>
+    <match lname="Liga 1" hTeam="Madura United" aTeam="Persis Solo" hId="165199" aId="583034" aScore="0" hScore="2" lid="8983" stageid="893610" stage="21" status="F" sId="6" id="4582609" time="01.02.2025 09:30" venue="Gelora Madura Ratu Pamelingan Stadium"/>
+    <match lname="Liga 1" hTeam="Madura United" aTeam="PSBS Biak Numfor" hId="165199" aId="585877" aScore="0" hScore="0" lid="8983" stageid="893610" stage="22" status="F" sId="6" id="4582594" time="08.02.2025 09:30" venue="Gelora Madura Ratu Pamelingan Stadium"/>
+    <match lname="Liga 1" hTeam="Madura United" aTeam="Dewa United FC" hId="165199" aId="585860" aScore="1" hScore="3" lid="8983" stageid="893610" stage="23" status="F" sId="6" id="4582601" time="15.02.2025 09:30" venue="Gelora Madura Ratu Pamelingan Stadium"/>
+    <match lname="Liga 1" hTeam="Persib Bandung" aTeam="Madura United" hId="165196" aId="165199" aScore="0" hScore="0" lid="8983" stageid="893610" stage="24" status="F" sId="6" id="4582645" time="22.02.2025 13:00" venue="Gelora Bandung Lautan Api Stadium"/>
+    <match lname="Liga 1" hTeam="Madura United" aTeam="PSM Makassar" hId="165199" aId="165198" aScore="3" hScore="1" lid="8983" stageid="893610" stage="25" status="F" sId="6" id="4582635" time="02.03.2025 14:30" venue="Gelora Madura Ratu Pamelingan Stadium"/>
+    <match lname="AFC Challenge League" hTeam="Tainan City" aTeam="Madura United" hId="321115" aId="165199" aScore="0" hScore="0" lid="9470" stageid="895173" stage="1/4" status="F" sId="6" id="4671383" time="06.03.2025 12:00"/>
+    <match lname="AFC Challenge League" hTeam="Madura United" aTeam="Tainan City" hId="165199" aId="321115" aScore="0" hScore="3" lid="9470" stageid="895173" stage="1/4" status="F" sId="6" id="4671387" time="13.03.2025 14:30" agg="3-0" aggh="won" agga="lost"/>
+    <match lname="Liga 1" hTeam="PSIS" aTeam="Madura United" hId="165202" aId="165199" aScore="2" hScore="1" lid="8983" stageid="893610" stage="26" status="F" sId="6" id="4582686" time="16.03.2025 14:30" venue="Jatidiri Stadium"/>
+    <match lname="Liga 1" hTeam="Madura United" aTeam="Persija Jakarta" hId="165199" aId="165191" aScore="0" hScore="1" lid="8983" stageid="893610" stage="27" status="F" sId="6" id="4582677" time="06.04.2025 14:00" venue="Gelora Madura Ratu Pamelingan Stadium"/>
+    <match lname="AFC Challenge League" hTeam="Svay Rieng" aTeam="Madura United" hId="542025" aId="165199" aScore="0" hScore="3" lid="9470" stageid="895173" stage="1/2" status="F" sId="6" id="4671390" time="10.04.2025 14:00"/>
+    <match lname="AFC Challenge League" hTeam="Madura United" aTeam="Svay Rieng" hId="165199" aId="542025" aScore="3" hScore="3" lid="9470" stageid="895173" stage="1/2" status="F" sId="6" id="4671392" time="17.04.2025 10:30" agg="3-6" aggh="lost" agga="won"/>
+    <match lname="Liga 1" hTeam="Persebaya Surabaya" aTeam="Madura United" hId="930525" aId="165199" aScore="0" hScore="1" lid="8983" stageid="893610" stage="29" status="F" sId="6" id="4582667" time="20.04.2025 14:00" venue="Gelora Bung Tomo Stadium"/>
+    <match lname="Liga 1" hTeam="Arema" aTeam="Madura United" hId="165200" aId="165199" aScore="1" hScore="0" lid="8983" stageid="893610" stage="28" status="F" sId="6" id="4582658" time="24.04.2025 14:00" venue="Kapten I Wayan Dipta Stadium"/>
+    <match lname="Liga 1" hTeam="Madura United" aTeam="Persik" hId="165199" aId="165197" aScore="1" hScore="2" lid="8983" stageid="893610" stage="30" status="F" sId="6" id="4582715" time="28.04.2025 14:00" venue="Gelora Madura Ratu Pamelingan Stadium"/>
+    <match lname="Liga 1" hTeam="Semen Padang" aTeam="Madura United" hId="215564" aId="165199" aScore="1" hScore="2" lid="8983" stageid="893610" stage="31" status="F" sId="6" id="4582709" time="04.05.2025 10:30" venue="Gelora Haji Agus Salim"/>
+    <match lname="Liga 1" hTeam="Madura United" aTeam="Borneo Samarinda" hId="165199" aId="585858" aScore="3" hScore="2" lid="8983" stageid="893610" stage="32" status="F" sId="6" id="4582690" time="10.05.2025 10:30" venue="Gelora Madura Ratu Pamelingan Stadium"/>
+    <match lname="Liga 1" hTeam="Bali United FC" aTeam="Madura United" hId="185751" aId="165199" aScore="2" hScore="0" lid="8983" stageid="893610" stage="33" status="F" sId="6" id="4582698" time="17.05.2025 10:30" venue="Kapten I Wayan Dipta Stadium"/>
+    <match lname="Liga 1" hTeam="Madura United" aTeam="PSS Sleman" hId="165199" aId="585847" aScore="3" hScore="0" lid="8983" stageid="893610" stage="34" status="F" sId="6" id="4582727" time="24.05.2025 11:00" venue="Gelora Madura Ratu Pamelingan Stadium"/>
+  </matches>
+  <squad>
+    <player name="Fawaid Ansory" id="1316706" age="25" ccode="IDN" cname="Indonesia" position="0" goals="0" penalties="0" ycards="0" rcards="0" assists="0" positionDesc="keeper" averageRating="0" number_of_ratings="0" shirtNo="1" excludeFromRanking="true" dob="1999-09-13" position_id="11" position_id_desc="GK"/>
+    <player name="Pedro Monteiro" id="566379" age="31" ccode="POR" cname="Portugal" position="1" goals="2" penalties="0" ycards="7" rcards="0" assists="0" positionDesc="defender" averageRating="0" number_of_ratings="0" shirtNo="3" excludeFromRanking="true" dob="1994-01-30" height="190" transfer_value="260000" transfer_updated="2021-07-14" position_id="34,32" position_id_desc="CB,RB"/>
+    <player name="Jordy Wehrmann" id="954926" age="26" ccode="NED" cname="Netherlands" position="2" goals="1" penalties="0" ycards="4" rcards="0" assists="0" positionDesc="midfielder" averageRating="0" number_of_ratings="0" shirtNo="4" excludeFromRanking="true" dob="1999-03-25" height="176" transfer_value="510000" transfer_updated="2021-07-11" position_id="73,66" position_id_desc="CM,CDM"/>
+    <player name="Kerim Palic" id="1174810" age="28" ccode="BIH" cname="Bosnia and Herzegovina" position="2" goals="0" penalties="0" ycards="1" rcards="1" assists="0" positionDesc="midfielder" averageRating="0" number_of_ratings="0" shirtNo="5" excludeFromRanking="true" dob="1997-01-24" height="188" position_id="75,66" position_id_desc="CM,CDM"/>
+    <player name="Iran Goncalves Junior" id="1179815" age="29" ccode="BRA" cname="Brazil" position="2" goals="4" penalties="0" ycards="2" rcards="1" assists="0" positionDesc="midfielder" averageRating="0" number_of_ratings="0" shirtNo="10" excludeFromRanking="true" dob="1995-10-10" position_id="77,85,103" position_id_desc="CM,CAM,RW"/>
+    <player name="Lulinha" id="171995" age="35" ccode="BRA" cname="Brazil" position="3" goals="13" penalties="3" ycards="7" rcards="0" assists="0" positionDesc="forward" averageRating="0" number_of_ratings="0" shirtNo="11" excludeFromRanking="true" dob="1990-04-10" height="170" position_id="107,103,105,78,77" position_id_desc="LW,RW,ST,LM,CM"/>
+    <player name="Andi Irfan" id="1501333" age="24" ccode="IDN" cname="Indonesia" position="3" goals="5" penalties="0" ycards="3" rcards="0" assists="0" positionDesc="forward" averageRating="0" number_of_ratings="0" shirtNo="17" excludeFromRanking="true" dob="2001-05-25" position_id="107,103" position_id_desc="LW,RW"/>
+    <player name="Muhammad Kemaluddin" id="1385882" age="26" ccode="IDN" cname="Indonesia" position="2" goals="0" penalties="0" ycards="0" rcards="1" assists="0" positionDesc="midfielder" averageRating="0" number_of_ratings="0" shirtNo="18" excludeFromRanking="true" dob="1999-04-28" height="167" position_id="73,32" position_id_desc="CM,RB"/>
+    <player name="Hanis Saghara" id="853106" age="25" ccode="IDN" cname="Indonesia" position="3" goals="0" penalties="0" ycards="1" rcards="0" assists="0" positionDesc="forward" averageRating="0" number_of_ratings="0" shirtNo="19" excludeFromRanking="true" dob="1999-09-08" position_id="104" position_id_desc="ST"/>
+    <player name="Ibrahim Sanjaya" id="1105053" age="27" ccode="IDN" cname="Indonesia" position="1" goals="0" penalties="0" ycards="1" rcards="0" assists="0" positionDesc="defender" averageRating="0" number_of_ratings="0" shirtNo="22" excludeFromRanking="true" dob="1997-08-26" position_id="32,36" position_id_desc="RB,CB"/>
+    <player name="Taufany Muslihuddin" id="1385768" age="23" ccode="IDN" cname="Indonesia" position="2" goals="0" penalties="0" ycards="2" rcards="0" assists="0" positionDesc="midfielder" averageRating="0" number_of_ratings="0" shirtNo="24" excludeFromRanking="true" dob="2002-03-24" position_id="75" position_id_desc="CM"/>
+    <player name="Riski Afrisal" id="1610484" age="19" ccode="IDN" cname="Indonesia" position="3" goals="1" penalties="0" ycards="1" rcards="0" assists="0" positionDesc="forward" averageRating="0" number_of_ratings="0" shirtNo="25" excludeFromRanking="true" dob="2006-04-25" height="169" position_id="103,107,73" position_id_desc="RW,LW,CM"/>
+    <player name="Aditya Harlan" id="1316776" age="38" ccode="IDN" cname="Indonesia" position="0" goals="0" penalties="0" ycards="2" rcards="0" assists="0" positionDesc="keeper" averageRating="0" number_of_ratings="0" shirtNo="26" excludeFromRanking="true" dob="1987-06-17" height="157" position_id="11" position_id_desc="GK"/>
+    <player name="Kartika Vedhayanto" id="1316649" age="23" ccode="IDN" cname="Indonesia" position="1" goals="0" penalties="0" ycards="0" rcards="0" assists="0" positionDesc="defender" averageRating="0" number_of_ratings="0" shirtNo="28" excludeFromRanking="true" dob="2002-01-25" position_id="36" position_id_desc="CB"/>
+    <player name="Miswar Saputra" id="1316809" age="29" ccode="IDN" cname="Indonesia" position="0" goals="0" penalties="0" ycards="2" rcards="0" assists="0" positionDesc="keeper" averageRating="0" number_of_ratings="0" shirtNo="30" excludeFromRanking="true" dob="1996-04-19" height="183" position_id="11" position_id_desc="GK"/>
+    <player name="Yuda Pratama" id="1328717" age="21" ccode="IDN" cname="Indonesia" position="3" goals="0" penalties="0" ycards="0" rcards="0" assists="0" positionDesc="forward" averageRating="0" number_of_ratings="0" shirtNo="31" excludeFromRanking="true" dob="2004-05-31" height="181" position_id="104" position_id_desc="ST"/>
+    <player name="Koko Ari" id="1317069" age="25" ccode="IDN" cname="Indonesia" position="1" goals="0" penalties="0" ycards="6" rcards="0" assists="0" positionDesc="defender" averageRating="0" number_of_ratings="0" shirtNo="33" excludeFromRanking="true" dob="2000-01-09" height="178" position_id="32,38,37" position_id_desc="RB,LB,CB"/>
+    <player name="Haudi Abdillah" id="1316683" age="32" ccode="IDN" cname="Indonesia" position="1" goals="0" penalties="0" ycards="3" rcards="0" assists="0" positionDesc="defender" averageRating="0" number_of_ratings="0" shirtNo="35" excludeFromRanking="true" dob="1993-04-20" height="180" position_id="36" position_id_desc="CB"/>
+    <player name="Muhammad Ilhamsyah" id="1316765" age="25" ccode="IDN" cname="Indonesia" position="2" goals="0" penalties="0" ycards="5" rcards="0" assists="0" positionDesc="midfielder" averageRating="0" number_of_ratings="0" shirtNo="36" excludeFromRanking="true" dob="1999-07-02" position_id="75,64" position_id_desc="CM,CDM"/>
+    <player name="Febrian Triyanto" id="1666877" age="21" ccode="IDN" cname="Indonesia" position="3" goals="0" penalties="0" ycards="0" rcards="0" assists="0" positionDesc="forward" averageRating="0" number_of_ratings="0" shirtNo="41" excludeFromRanking="true" dob="2004-02-11" position_id="103" position_id_desc="RW"/>
+    <player name="Feby Ramzy Wirawan" id="1332459" age="23" ccode="IDN" cname="Indonesia" position="2" goals="0" penalties="0" ycards="3" rcards="0" assists="0" positionDesc="midfielder" averageRating="0" number_of_ratings="0" shirtNo="42" excludeFromRanking="true" dob="2002-02-04" position_id="77" position_id_desc="CM"/>
+    <player name="Nur Diansyah" id="1079936" age="26" ccode="IDN" cname="Indonesia" position="1" goals="0" penalties="0" ycards="3" rcards="0" assists="0" positionDesc="defender" averageRating="0" number_of_ratings="0" shirtNo="44" excludeFromRanking="true" dob="1998-12-18" height="176" position_id="36" position_id_desc="CB"/>
+    <player name="Taufik Hidayat" id="1326846" age="32" ccode="IDN" cname="Indonesia" position="1" goals="1" penalties="0" ycards="2" rcards="0" assists="0" positionDesc="defender" averageRating="0" number_of_ratings="0" shirtNo="45" excludeFromRanking="true" dob="1993-03-20" height="167" position_id="38,32,33,72" position_id_desc="LB,RB,CB,RM"/>
+    <player name="Nuri Wibowo" id="1387710" age="23" ccode="IDN" cname="Indonesia" position="0" goals="0" penalties="0" ycards="0" rcards="0" assists="0" positionDesc="keeper" averageRating="0" number_of_ratings="0" shirtNo="61" excludeFromRanking="true" dob="2001-08-06" height="185"/>
+    <player name="Ahmad Rusadi" id="1373169" age="22" ccode="IDN" cname="Indonesia" position="1" goals="0" penalties="0" ycards="5" rcards="0" assists="0" positionDesc="defender" averageRating="0" number_of_ratings="0" shirtNo="68" excludeFromRanking="true" dob="2003-04-04" height="177" position_id="36,38,73" position_id_desc="CB,LB,CM"/>
+    <player name="Make Maulidino" id="1332457" age="26" ccode="IDN" cname="Indonesia" position="3" goals="0" penalties="0" ycards="0" rcards="0" assists="0" positionDesc="forward" averageRating="0" number_of_ratings="0" shirtNo="69" excludeFromRanking="true" dob="1998-07-22"/>
+    <player name="Brayan Angulo" id="282152" age="31" ccode="COL" cname="Colombia" position="3" goals="0" penalties="0" ycards="3" rcards="0" assists="0" positionDesc="forward" averageRating="0" number_of_ratings="0" shirtNo="70" excludeFromRanking="true" dob="1993-07-19" height="170" position_id="103,73,107" position_id_desc="RW,CM,LW"/>
+    <player name="Sandi Arta" id="1443506" age="23" ccode="IDN" cname="Indonesia" position="3" goals="0" penalties="0" ycards="1" rcards="1" assists="0" positionDesc="forward" averageRating="0" number_of_ratings="0" shirtNo="77" excludeFromRanking="true" dob="2002-01-08" position_id="103" position_id_desc="RW"/>
+    <player name="Arsa Ahmad" id="1520271" age="21" ccode="IDN" cname="Indonesia" position="3" goals="1" penalties="0" ycards="0" rcards="0" assists="0" positionDesc="forward" averageRating="0" number_of_ratings="0" shirtNo="91" excludeFromRanking="true" dob="2003-10-31" height="180" position_id="103,71" position_id_desc="RW,RM"/>
+    <player name="Miljan Skrbic" id="432719" age="29" ccode="SRB" cname="Serbia" position="3" goals="3" penalties="1" ycards="1" rcards="0" assists="0" positionDesc="forward" averageRating="0" number_of_ratings="0" shirtNo="95" excludeFromRanking="true" dob="1995-09-18" height="192" position_id="105" position_id_desc="ST"/>
+  </squad>
+  <tournaments>
+    <tournament template_id="8983" name="Liga 1" season="2024/2025" ccode="IDN" tournament_id="23975" stage_id="893610"/>
+    <tournament template_id="9470" name="AFC Challenge League" season="2024/2025" ccode="INT" tournament_id="24327" stage_id="895173"/>
+  </tournaments>
+  <coach name="Alfredo Vera" ccode="IDN" cname="Indonesia" id="1316954" age="52" dob="1972-08-18"/>
+  <trophy>
+    <comp name="Liga 1" tournamentTemplateId="8983" area="Indonesia" ccode="IDN" won="0" runnerup="1">
+      <season_won/>
+      <season_runnerup>2023/2024</season_runnerup>
+    </comp>
+    <comp name="Suramadu Super Cup" tournamentTemplateId="-1" area="Asia" ccode="INT" won="1" runnerup="0">
+      <season_won>2018</season_won>
+      <season_runnerup/>
+    </comp>
+  </trophy>
+  <venue name="Gelora Madura Ratu Pamelingan Stadium" address="Desa Ceguk, Kecamatan Tlanakan" capacity="35000" city="Pamekasan" countryCode="IDN" opened="2016" surface="grass" latitude="-7.194392" longitude="113.480989" isGrass="true"/>
+  <tables>
+    <current>
+      <link name="Liga 1" ccode="IDN" season="2024/2025" stage_id="893610" tournament_id="23975" template_id="8983" league_id="8983">tables.ext.8983.fot.gz</link>
+    </current>
+    <historic>
+      <link name="Liga 1" ccode="IDN" season="2016" stage_id="844222" tournament_id="10323" template_id="8983" league_id="8983">historic/8983/season/10323/table.fot.gz</link>
+      <link name="Liga 1" ccode="IDN" season="2017" stage_id="848976" tournament_id="11354" template_id="8983" league_id="8983">historic/8983/season/11354/table.fot.gz</link>
+      <link name="Liga 1" ccode="IDN" season="2018" stage_id="854758" tournament_id="12567" template_id="8983" league_id="8983">historic/8983/season/12567/table.fot.gz</link>
+      <link name="Liga 1" ccode="IDN" season="2019" stage_id="861208" tournament_id="13866" template_id="8983" league_id="8983">historic/8983/season/13866/table.fot.gz</link>
+      <link name="Liga 1" ccode="IDN" season="2020" stage_id="866751" tournament_id="14995" template_id="8983" league_id="8983">historic/8983/season/14995/table.fot.gz</link>
+      <link name="Liga 1" ccode="IDN" season="2021/2022" stage_id="873882" tournament_id="16451" template_id="8983" league_id="8983">historic/8983/season/16451/table.fot.gz</link>
+      <link name="Liga 1" ccode="IDN" season="2022/2023" stage_id="880283" tournament_id="17961" template_id="8983" league_id="8983">historic/8983/season/17961/table.fot.gz</link>
+      <link name="Liga 1" ccode="IDN" season="2023/2024" stage_id="885678" tournament_id="20743" template_id="8983" league_id="8983">historic/8983/season/20743/table.fot.gz</link>
+    </historic>
+  </tables>
+  <season_stats>
+    <link name="Liga 1" ccode="INA" season="2024/2025" stage_id="893610" template_id="8983" tournament_id="23975">stats/teams/165199/23975.json</link>
+    <link name="Liga 1" ccode="INA" season="2023/2024" stage_id="0" template_id="8983" tournament_id="20743">stats/teams/165199/20743.json</link>
+    <link name="Liga 1" ccode="INA" season="2022/2023" stage_id="880283" template_id="8983" tournament_id="17961">stats/teams/165199/17961.json</link>
+    <link name="Liga 1" ccode="INA" season="2021/2022" stage_id="873882" template_id="8983" tournament_id="16451">stats/teams/165199/16451.json</link>
+    <link name="Liga 1" ccode="INA" season="2020" stage_id="866751" template_id="8983" tournament_id="14995">stats/teams/165199/14995.json</link>
+    <link name="Liga 1" ccode="INA" season="2019" stage_id="861208" template_id="8983" tournament_id="13866">stats/teams/165199/13866.json</link>
+    <link name="Liga 1" ccode="INA" season="2018" stage_id="854758" template_id="8983" tournament_id="12567">stats/teams/165199/12567.json</link>
+    <link name="Liga 1" ccode="INA" season="2017" stage_id="848976" template_id="8983" tournament_id="11354">stats/teams/165199/11354.json</link>
+    <link name="Liga 1" ccode="INA" season="2016" stage_id="844222" template_id="8983" tournament_id="10323">stats/teams/165199/10323.json</link>
+  </season_stats>
+  <coach_history>
+    <season_result id="1284965" name="Mauricio Souza" ccode="BRA" season="2023/2024" league_id="8983" league_name="Liga 1" win="15" draw="10" loss="9" ppg="1.62" win_percentage="0.44"/>
+    <season_result id="433275" name="Fabio Lefundes" ccode="BRA" season="2022/2023" league_id="8983" league_name="Liga 1" win="12" draw="6" loss="10" ppg="1.5" win_percentage="0.43"/>
+    <season_result id="433275" name="Fabio Lefundes" ccode="BRA" season="2021/2022" league_id="8983" league_name="Liga 1" win="8" draw="6" loss="9" ppg="1.3" win_percentage="0.35"/>
+    <season_result id="1100763" name="Simon McMenemy" ccode="SCO" season="2013" league_id="8983" league_name="Liga 1" win="2" draw="3" loss="5" ppg="0.9" win_percentage="0.2"/>
+  </coach_history>
+  <links>
+    <link href="webcal://pub.fotmob.com/prod/pub/api/v2/calendar/team/165199.ics" rel="calendar" type="calendar/text" target="apple"/>
+    <link href="webcal://pub.fotmob.com/prod/pub/api/v2/calendar/team/165199.ics" rel="calendar" type="calendar/text" target="outlook"/>
+    <link href="https://pub.fotmob.com/prod/pub/api/v2/calendar/team/165199.ics" rel="calendar" type="calendar/text" target="ics"/>
+    <link href="https://www.google.com/calendar/render?cid=webcal://pub.fotmob.com/prod/pub/api/v2/calendar/team/165199.ics" rel="calendar" type="calendar/text" target="google"/>
+    <link href="https://pub.fotmob.com/prod/db/api/team/165199/fixture?before=4582454" rel="previous-fixture" type="application/json"/>
+  </links>
+</team>
