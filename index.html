@@ -1,193 +1,728 @@
-
 <!DOCTYPE html>
-<!-- code taken from https://juliangarnier.com/ -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Agus Ibrahim</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="I design and code things on the mobile.">
-<meta property="og:site_name" content="agusibrah.im">
-<meta property="og:title" content="Agus Ibrahim">
-<meta property="og:description" content="I design and code things on the mobile.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://agusibrah.im">
-<meta property="og:image" content="http://juliangarnier.com/img/og-image.png">
-<meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="768">
-<meta property="og:image:height" content="416">
-<link rel="icon" type="image/png" href="https://juliangarnier.com/img/favicon.png">
-<link rel="apple-touch-icon" href="https://juliangarnier.com/img/apple-touch-icon.png">
-<link rel="stylesheet" type="text/css" media="screen" href="https://juliangarnier.com/css/styles.css">
-<script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script></head><body>
-  <div class="messages"></div>
-</script><script src="https://juliangarnier.com/js/anime.js"></script>
-<script>
-  window.onload = function() {
-
-var messagesEl = document.querySelector('.messages');
-var typingSpeed = 20;
-var loadingText = '<b>•</b><b>•</b><b>•</b>';
-var messageIndex = 0;
-
-var getCurrentTime = function() {
-  var date = new Date();
-  var hours =  date.getHours();
-  var minutes =  date.getMinutes();
-  var current = hours + (minutes * .01);
-  if (current >= 5 && current < 19) return 'Have a nice day';
-  if (current >= 19 && current < 22) return 'Have a nice evening';
-  if (current >= 22 || current < 5) return 'Have a good night';
-}
-
-var messages = [
-  'Hey there 👋',
-  'I\'m Agus',
-  'I design and code things for mobile','I can build mobile Apps for Android and iOS',
-  'I\'m currently accepting freelance work.<br> You can contact me at <a href="mailto:hello@agusibrah.im">hello@agusibrah.im</a>',
-  '<a target="_blank" href="https://github.com/agusibrahim">github.com/agusibrahim</a>',
-  getCurrentTime(),
-  '👀 A.'
-]
-
-var getFontSize = function() {
-  return parseInt(getComputedStyle(document.body).getPropertyValue('font-size'));
-}
-
-var pxToRem = function(px) {
-  return px / getFontSize() + 'rem';
-}
-
-var createBubbleElements = function(message, position) {
-  var bubbleEl = document.createElement('div');
-  var messageEl = document.createElement('span');
-  var loadingEl = document.createElement('span');
-  bubbleEl.classList.add('bubble');
-  bubbleEl.classList.add('is-loading');
-  bubbleEl.classList.add('cornered');
-  bubbleEl.classList.add(position === 'right' ? 'right' : 'left');
-  messageEl.classList.add('message');
-  loadingEl.classList.add('loading');
-  messageEl.innerHTML = message;
-  loadingEl.innerHTML = loadingText;
-  bubbleEl.appendChild(loadingEl);
-  bubbleEl.appendChild(messageEl);
-  bubbleEl.style.opacity = 0;
-  return {
-    bubble: bubbleEl,
-    message: messageEl,
-    loading: loadingEl
-  }
-}
-
-var getDimentions = function(elements) {
-  return dimensions = {
-    loading: {
-      w: '4rem',
-      h: '2.25rem'
-    },
-    bubble: {
-      w: pxToRem(elements.bubble.offsetWidth + 4),
-      h: pxToRem(elements.bubble.offsetHeight)
-    },
-    message: {
-      w: pxToRem(elements.message.offsetWidth + 4),
-      h: pxToRem(elements.message.offsetHeight)
-    }
-  }
-}
-
-var sendMessage = function(message, position) {
-  var loadingDuration = (message.replace(/<(?:.|\n)*?>/gm, '').length * typingSpeed) + 500;
-  var elements = createBubbleElements(message, position);
-  messagesEl.appendChild(elements.bubble);
-  messagesEl.appendChild(document.createElement('br'));
-  var dimensions = getDimentions(elements);
-  elements.bubble.style.width = '0rem';
-  elements.bubble.style.height = dimensions.loading.h;
-  elements.message.style.width = dimensions.message.w;
-  elements.message.style.height = dimensions.message.h;
-  elements.bubble.style.opacity = 1;
-  var bubbleOffset = elements.bubble.offsetTop + elements.bubble.offsetHeight;
-  if (bubbleOffset > messagesEl.offsetHeight) {
-    var scrollMessages = anime({
-      targets: messagesEl,
-      scrollTop: bubbleOffset,
-      duration: 750
-    });
-  }
-  var bubbleSize = anime({
-    targets: elements.bubble,
-    width: ['0rem', dimensions.loading.w],
-    marginTop: ['2.5rem', 0],
-    marginLeft: ['-2.5rem', 0],
-    duration: 800,
-    easing: 'easeOutElastic'
-  });
-  var loadingLoop = anime({
-    targets: elements.bubble,
-    scale: [1.05, .95],
-    duration: 1100,
-    loop: true,
-    direction: 'alternate',
-    easing: 'easeInOutQuad'
-  });
-  var dotsStart = anime({
-    targets: elements.loading,
-    translateX: ['-2rem', '0rem'],
-    scale: [.5, 1],
-    duration: 400,
-    delay: 25,
-    easing: 'easeOutElastic',
-  });
-  var dotsPulse = anime({
-    targets: elements.bubble.querySelectorAll('b'),
-    scale: [1, 1.25],
-    opacity: [.5, 1],
-    duration: 300,
-    loop: true,
-    direction: 'alternate',
-    delay: function(i) {return (i * 100) + 50}
-  });
-  setTimeout(function() {
-    loadingLoop.pause();
-    dotsPulse.restart({
-      opacity: 0,
-      scale: 0,
-      loop: false,
-      direction: 'forwards',
-      update: function(a) {
-        if (a.progress >= 65 && elements.bubble.classList.contains('is-loading')) {
-          elements.bubble.classList.remove('is-loading');
-          anime({
-            targets: elements.message,
-            opacity: [0, 1],
-            duration: 300,
-          });
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agus Maksum - Mobile App Developer</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sketch': ['Kalam', 'cursive'],
+                        'mono': ['Fira Code', 'monospace'],
+                    },
+                    colors: {
+                        sketchBlue: '#2557a7',
+                        sketchDark: '#1e293b',
+                        paperBG: '#fcfcfc',
+                        paperDarker: '#f3f4f6'
+                    }
+                }
+            }
         }
-      }
-    });
-    bubbleSize.restart({
-      scale: 1,
-      width: [dimensions.loading.w, dimensions.bubble.w ],
-      height: [dimensions.loading.h, dimensions.bubble.h ],
-      marginTop: 0,
-      marginLeft: 0,
-      begin: function() {
-        if (messageIndex < messages.length) elements.bubble.classList.remove('cornered');
-      }
-    })
-  }, loadingDuration - 50);
-}
+    </script>
 
-var sendMessages = function() {
-  var message = messages[messageIndex];
-  if (!message) return;
-  sendMessage(message);
-  ++messageIndex;
-  setTimeout(sendMessages, (message.replace(/<(?:.|\n)*?>/gm, '').length * typingSpeed) + anime.random(900, 1200));
-}
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-sendMessages();
+    <style>
+        /* Custom Styles for Sketchy Look */
+        body {
+            background-color: #e8e8e8;
+            /* Prototype grid pattern background */
+            background-image:
+                linear-gradient(rgba(180, 190, 200, 0.35) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(180, 190, 200, 0.35) 1px, transparent 1px),
+                linear-gradient(rgba(180, 190, 200, 0.12) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(180, 190, 200, 0.12) 1px, transparent 1px);
+            background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+            color: #1e293b;
+            min-height: 100vh;
+            padding: 24px 16px;
+        }
 
-}
-</script>
-</body></html>
+        @media (min-width: 768px) {
+            body {
+                padding: 40px 32px;
+            }
+        }
+
+        /* Paper card container */
+        .paper-card {
+            background-color: #fcfcfa;
+            /* Slightly warm paper color */
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+            max-width: 1400px;
+            margin: 0 auto;
+            border-radius: 6px;
+            box-shadow:
+                0 2px 8px rgba(0,0,0,0.08),
+                0 8px 32px rgba(0,0,0,0.12),
+                0 0 0 1px rgba(0,0,0,0.04);
+            position: relative;
+        }
+
+        .sketch-button {
+            color: white;
+            background: none;
+            border: none;
+            transition: all 0.2s ease;
+            position: relative;
+            z-index: 1;
+            padding: 12px 32px;
+        }
+        .sketch-button::before {
+            content: '';
+            position: absolute;
+            inset: -4px -8px;
+            z-index: -1;
+            background-color: #2557a7;
+            /* Paint brush stroke shape using clip-path */
+            clip-path: polygon(
+                0% 20%, 2% 8%, 6% 2%, 12% 0%, 20% 1%, 30% 4%, 40% 2%, 50% 0%,
+                60% 1%, 70% 3%, 80% 1%, 88% 0%, 94% 3%, 98% 8%, 100% 18%,
+                100% 30%, 99% 50%, 100% 70%, 100% 82%, 98% 92%, 94% 97%,
+                88% 100%, 80% 99%, 70% 97%, 60% 99%, 50% 100%, 40% 98%,
+                30% 100%, 20% 99%, 12% 100%, 6% 98%, 2% 92%, 0% 80%,
+                1% 60%, 0% 40%
+            );
+            border-radius: 4px;
+        }
+        .sketch-button:hover {
+            transform: scale(1.05) rotate(-1deg);
+            filter: brightness(1.1);
+        }
+        .sketch-button-outline {
+            color: #2557a7;
+            background: none;
+            border: none;
+            transition: all 0.2s ease;
+            position: relative;
+            z-index: 1;
+            padding: 12px 32px;
+        }
+        .sketch-button-outline:hover {
+            transform: scale(1.25) rotate(-1deg);
+            filter: brightness(1.5);
+        }
+        .sketch-button-outline::before {
+            content: '';
+            position: absolute;
+            inset: -4px -8px;
+            z-index: -1;
+            background-color: white;
+            border: 2px solid #1e293b;
+            clip-path: polygon(
+                0% 20%, 2% 8%, 6% 2%, 12% 0%, 20% 1%, 30% 4%, 40% 2%, 50% 0%,
+                60% 1%, 70% 3%, 80% 1%, 88% 0%, 94% 3%, 98% 8%, 100% 18%,
+                100% 30%, 99% 50%, 100% 70%, 100% 82%, 98% 92%, 94% 97%,
+                88% 100%, 80% 99%, 70% 97%, 60% 99%, 50% 100%, 40% 98%,
+                30% 100%, 20% 99%, 12% 100%, 6% 98%, 2% 92%, 0% 80%,
+                1% 60%, 0% 40%
+            );
+            border-radius: 4px;
+        }
+        .sketch-button-outline:hover {
+            transform: scale(1.05) rotate(-1deg);
+            color: white;
+        }
+        .sketch-button-outline:hover::before {
+            background-color: #2557a7;
+        }
+
+        .sketch-border {
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+            border: 2px solid #cbd5e1;
+            background-color: white;
+        }
+
+        .sketch-box {
+            border: 1.5px solid #1e293b;
+            border-radius: 3px 250px 2px 250px / 250px 4px 250px 3px;
+        }
+
+        /* Wavy sketch box for stat icons */
+        .sketch-box-wavy {
+            position: relative;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .sketch-box-wavy svg.wavy-border {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* SVG Underline positioning */
+        .title-underline-container {
+            position: relative;
+            display: inline-block;
+        }
+        .svg-underline {
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 12px;
+            z-index: -1;
+        }
+
+        /* Dotted grid background overlay simulating the dots in mockup */
+        .dotted-bg {
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.3;
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Ensure interactive elements stay above decorative background */
+        .content-layer {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Spotlight: dim body background */
+        body.spotlight-active::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 50;
+            pointer-events: auto;
+            cursor: pointer;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Elevate paper-card above body overlay when spotlight is active */
+        body.spotlight-active .paper-card {
+            z-index: 60;
+        }
+
+        /* Dim all direct children of content-layer */
+        body.spotlight-active .content-layer > * {
+            opacity: 0.12;
+            filter: brightness(0.5);
+            transition: opacity 0.4s ease, filter 0.4s ease;
+            pointer-events: none;
+        }
+
+        /* The spotlighted section stays bright */
+        body.spotlight-active .content-layer > * .spotlighted,
+        body.spotlight-active .content-layer .spotlighted {
+            opacity: 1 !important;
+            filter: none !important;
+            pointer-events: auto !important;
+        }
+
+        /* When the direct child IS the spotlighted element */
+        body.spotlight-active .content-layer > .spotlighted {
+            opacity: 1 !important;
+            filter: none !important;
+            pointer-events: auto !important;
+        }
+
+        /* Spotlighted section glow */
+        .spotlighted {
+            position: relative;
+            border-radius: 12px;
+            box-shadow:
+                0 0 0 4px #2557a7,
+                0 0 30px rgba(37, 87, 167, 0.5),
+                0 0 80px rgba(37, 87, 167, 0.25);
+            animation: spotlightPulse 0.6s ease-out;
+            padding: 16px;
+            background-color: #fcfcfa;
+        }
+
+        @keyframes spotlightPulse {
+            0% { transform: scale(0.97); opacity: 0.5; }
+            60% { transform: scale(1.01); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body class="font-sketch text-sketchDark antialiased overflow-x-hidden min-h-screen relative">
+
+    <div class="paper-card">
+    <div class="dotted-bg"></div>
+
+    <div class="max-w-7xl mx-auto px-6 py-20 content-layer">
+        
+        <!-- HEADER / NAVIGATION -->
+        <header class="flex flex-col md:flex-row justify-between items-center mb-16 gap-6">
+            <!-- Logo -->
+            <div class="flex items-center gap-2">
+                <svg width="40" height="40" viewBox="0 0 50 50" fill="none" stroke="#2557a7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transform -rotate-6">
+                    <!-- Simple hand-drawn crown -->
+                    <path d="M5 25 L15 10 L25 25 L35 10 L45 25 L40 40 L10 40 Z" />
+                </svg>
+                <div>
+                    <h1 class="text-3xl font-bold leading-none tracking-wide text-sketchDark">Agus Ibrahim</h1>
+                    <p class="text-sketchBlue text-sm">Mobile App Developer</p>
+                </div>
+            </div>
+
+            <!-- Nav Links -->
+            <nav class="flex flex-wrap justify-center gap-6 text-lg tracking-wider uppercase">
+                <a href="#hero" class="nav-link relative group text-sketchBlue font-bold" data-target="hero">
+                    HOME
+                    <svg class="absolute -bottom-1 left-0 w-full h-2" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" stroke="#2557a7" stroke-width="2" fill="none"/></svg>
+                </a>
+                <a href="#about" class="nav-link hover:text-sketchBlue transition-colors" data-target="about">ABOUT</a>
+                <a href="#skills" class="nav-link hover:text-sketchBlue transition-colors" data-target="skills">SKILLS</a>
+                <!-- <a href="#portfolio" class="nav-link hover:text-sketchBlue transition-colors" data-target="portfolio">PORTFOLIO</a> -->
+                <a href="#contact" class="nav-link hover:text-sketchBlue transition-colors" data-target="contact">CONTACT</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <a href="mailto:pymobile123@gmail.com" class="sketch-button px-6 py-2 flex items-center gap-2 uppercase tracking-wide font-bold text-sm no-underline">
+                LET'S TALK <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+        </header>
+
+        <!-- HERO SECTION -->
+        <section id="hero" class="relative min-h-[600px] flex flex-col lg:flex-row items-center justify-between mb-24">
+            
+            <!-- Left Column: Text & Code -->
+            <div class="w-full lg:w-1/3 z-10 flex flex-col gap-6 mb-10 lg:mb-0 mt-10">
+                <!-- Code Snippet -->
+                <div class="text-sketchBlue font-mono text-xs leading-tight hidden">
+                    <p>// life = {</p>
+                    <p class="ml-4 text-sketchDark">code: <span class="text-sketchBlue">true</span>,</p>
+                    <p class="ml-4 text-sketchDark">solve: <span class="text-sketchBlue">problems</span>,</p>
+                    <p class="ml-4 text-sketchDark">build: <span class="text-sketchBlue">impact</span>,</p>
+                    <p class="ml-4 text-sketchDark">repeat: <span class="text-sketchBlue">learn</span></p>
+                    <p>};</p>
+                </div>
+
+                <!-- Main Headline -->
+                <div class="mt-4">
+                    <h2 class="text-5xl lg:text-6xl font-bold leading-tight text-sketchDark transform -rotate-1">
+                        I BUILD APPS <br>
+                        THAT SOLVE <br>
+                        <span class="title-underline-container text-sketchBlue">
+                            REAL PROBLEMS.
+                            <!-- Hand drawn wavy underline -->
+                            <svg class="svg-underline" viewBox="0 0 300 20" preserveAspectRatio="none">
+                                <path d="M 0 10 Q 50 0 100 10 T 200 10 T 300 10" fill="none" stroke="#2557a7" stroke-width="4" stroke-linecap="round"/>
+                                <path d="M 0 15 Q 70 5 150 15 T 300 15" fill="none" stroke="#2557a7" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+                            </svg>
+                        </span>
+                    </h2>
+                </div>
+
+                <!-- Description -->
+                <p class="text-lg text-gray-700 max-w-sm leading-relaxed mt-4">
+                    Mobile App Developer with 10+ years of experience in Mobile App. Turning ideas into reliable and impactful digital solutions.
+                </p>
+
+                <!-- CTA & Socials -->
+                <div class="flex items-center gap-6 mt-6">
+                    <a href="https://github.com/agusibrahim" target="_blank" class="sketch-button px-6 py-3 flex items-center gap-2 uppercase tracking-wide font-bold no-underline">
+                        VIEW MY WORK <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+                <div class="flex gap-4 mt-2">
+                    <a href="https://github.com/agusibrahim" target="_blank" class="p-2 hover:text-sketchBlue transition-colors"><i data-lucide="github" class="w-8 h-8"></i></a>
+                    <a href="#" class="p-2 hover:text-sketchBlue transition-colors"><i data-lucide="linkedin" class="w-8 h-8"></i></a>
+                    <a href="mailto:pymobile123@gmail.com" class="p-2 hover:text-sketchBlue transition-colors"><i data-lucide="mail" class="w-8 h-8"></i></a>
+                </div>
+            </div>
+
+            <!-- Center + Right: Hero Image overlapping Phone Mockup -->
+            <div class="w-full lg:w-2/3 relative min-h-[600px]">
+                
+                <!-- Hero Image - positioned to be large and overlap phone -->
+                <img src="https://ik.imagekit.io/menggokucingku/agus/hero_3-2.png" alt="Agus Maksum" class="absolute z-30 h-auto object-contain" style="width: 550px; max-width: none; top: -40px; left: 50%; transform: translateX(-65%);" />
+                
+                <!-- Floating code symbol -->
+                <div class="absolute text-sketchBlue text-3xl font-bold top-10 left-[15%] transform -rotate-12 z-20">&lt;/&gt;</div>
+
+                <!-- Floating text block -->
+                <div class="absolute top-0 right-10 flex flex-col items-start z-20 hidden">
+                    <p class="text-xl">observe.</p>
+                    <p class="text-xl">analyze.</p>
+                    <p class="text-xl">understand.</p>
+                    <p class="text-xl">reconstruct.</p>
+                    <!-- Sketch Arrow up -->
+                    <svg width="40" height="60" viewBox="0 0 40 60" fill="none" stroke="#2557a7" stroke-width="2" stroke-linecap="round" class="ml-10 mt-2">
+                        <path d="M20 50 Q 25 30 35 10 M35 10 L 25 15 M35 10 L 30 25" />
+                    </svg>
+                </div>
+
+                <!-- Floating Chip Icon -->
+                <div class="absolute top-10 right-[40%] opacity-70 transform rotate-12 z-20">
+                    <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+                </div>
+
+                <!-- Phone Mockup Placeholder -->
+                <div class="w-[260px] h-[520px] sketch-box bg-white absolute bottom-0 right-0 transform rotate-6 p-4 shadow-xl flex flex-col z-40">
+                    <!-- Phone UI Mockup (Simplified) -->
+                    <div class="flex justify-between items-center mb-4 text-xs">
+                        <span>9:41</span>
+                        <div class="flex gap-1"><i data-lucide="wifi" class="w-3 h-3"></i><i data-lucide="battery" class="w-3 h-3"></i></div>
+                    </div>
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="w-6 h-6 rounded-full bg-gray-200"></div>
+                        <div class="flex gap-2">
+                            <i data-lucide="bell" class="w-4 h-4"></i>
+                            <i data-lucide="search" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-500 mb-1">Dashboard</p>
+                    <h3 class="text-xl font-bold mb-1">Hello, Agus!</h3>
+                    <p class="text-[10px] text-gray-400 mb-4">Let's build something great.</p>
+                    
+                    <div class="grid grid-cols-3 gap-2 mb-4">
+                        <div class="sketch-box p-2 text-center text-[10px]"><p class="text-sketchBlue font-bold text-sm">10+</p>Projects</div>
+                        <div class="sketch-box p-2 text-center text-[10px]"><p class="text-sketchBlue font-bold text-sm">10+</p>Years</div>
+                        <div class="sketch-box p-2 text-center text-[10px]"><i data-lucide="smile" class="w-4 h-4 mx-auto mb-1 text-sketchBlue"></i>Clients</div>
+                    </div>
+
+                    <p class="text-xs font-bold mb-2">Recent Projects</p>
+                    <div class="flex-1 flex flex-col gap-2">
+                        <div class="flex items-center gap-2 sketch-border p-2">
+                            <div class="w-8 h-8 bg-blue-100 rounded flex items-center justify-center text-sketchBlue"><i data-lucide="smartphone" class="w-4 h-4"></i></div>
+                            <div><p class="text-[10px] font-bold">Travel App</p><p class="text-[8px] text-gray-500">Flutter • iOS • Android</p></div>
+                        </div>
+                        <div class="flex items-center gap-2 sketch-border p-2">
+                            <div class="w-8 h-8 bg-green-100 rounded flex items-center justify-center text-green-600"><i data-lucide="cpu" class="w-4 h-4"></i></div>
+                            <div><p class="text-[10px] font-bold">IoT Monitoring</p><p class="text-[8px] text-gray-500">Flutter • Embedded</p></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Bottom Nav -->
+                    <div class="mt-auto flex justify-between border-t border-gray-200 pt-2 text-[8px] text-gray-500">
+                        <div class="text-center text-sketchBlue"><i data-lucide="home" class="w-4 h-4 mx-auto"></i>Home</div>
+                        <div class="text-center"><i data-lucide="folder" class="w-4 h-4 mx-auto"></i>Projects</div>
+                        <div class="text-center"><i data-lucide="bar-chart-2" class="w-4 h-4 mx-auto"></i>Stats</div>
+                        <div class="text-center"><i data-lucide="user" class="w-4 h-4 mx-auto"></i>Profile</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HORIZONTAL DIVIDER 1 -->
+        <div class="w-full flex justify-center mb-16 opacity-50">
+            <svg width="80%" height="10" viewBox="0 0 1000 10" preserveAspectRatio="none">
+                <path d="M0 5 Q 250 0 500 5 T 1000 5" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="10, 10"/>
+            </svg>
+        </div>
+
+        <!-- WHAT I DO SECTION -->
+        <section id="skills" class="mb-24 text-center">
+            <h2 class="text-2xl font-bold tracking-widest uppercase mb-16 relative inline-block">
+                WHAT I DO
+                <svg class="absolute -bottom-2 left-1/4 w-1/2 h-2" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" stroke="#1e293b" stroke-width="2" fill="none"/></svg>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
+                
+                <!-- Card 1: Mobile -->
+                <div class="relative flex flex-col items-center md:items-start">
+                    <!-- Blue Arrow pointing down left -->
+                    <svg class="absolute -top-10 left-1/2 transform -translate-x-1/2 md:-translate-x-0 md:left-auto md:right-10 w-12 h-12" viewBox="0 0 50 50" fill="none" stroke="#2557a7" stroke-width="2" stroke-linecap="round">
+                        <path d="M40 10 Q 30 20 10 40 M10 40 L 25 35 M10 40 L 15 25" />
+                    </svg>
+                    <h3 class="text-xl font-bold text-sketchBlue uppercase mb-6 text-center md:text-left">MOBILE APP<br>DEVELOPER</h3>
+                    
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-4">
+                        <p class="text-sm text-gray-700 leading-relaxed max-w-[200px] text-center md:text-left mb-6 md:mb-0">
+                            Building cross-platform mobile applications using Flutter for iOS and Android. Clean code, pixel perfect UI, and great performance.
+                        </p>
+                        <!-- Chibi 1 -->
+                        <img src="https://ik.imagekit.io/menggokucingku/agus/chibi_1.png" alt="Mobile App Developer" class="w-[200px] h-auto object-contain" />
+                    </div>
+                    <!-- Tech Icons -->
+                    <div class="flex gap-4 mt-6 text-sketchBlue">
+                        <i data-lucide="smartphone" class="w-6 h-6"></i>
+                        <i data-lucide="apple" class="w-6 h-6"></i>
+                        <i data-lucide="bot" class="w-6 h-6"></i>
+                    </div>
+                </div>
+
+                <!-- Card 2: Embedded -->
+                <div class="relative flex flex-col items-center md:items-start">
+                    <!-- Blue Arrow pointing down left -->
+                    <svg class="absolute -top-10 left-1/2 transform -translate-x-1/2 md:-translate-x-0 md:left-auto md:right-10 w-12 h-12" viewBox="0 0 50 50" fill="none" stroke="#2557a7" stroke-width="2" stroke-linecap="round">
+                        <path d="M40 10 Q 30 20 10 40 M10 40 L 25 35 M10 40 L 15 25" />
+                    </svg>
+                    <h3 class="text-xl font-bold text-sketchBlue uppercase mb-6 text-center md:text-left">EMBEDDED<br>SYSTEM</h3>
+                    
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-4">
+                        <p class="text-sm text-gray-700 leading-relaxed max-w-[200px] text-center md:text-left mb-6 md:mb-0">
+                            Designing and developing smart embedded solutions with microcontrollers, sensors, and IoT integrations.
+                        </p>
+                        <!-- Chibi 2 -->
+                        <img src="https://ik.imagekit.io/menggokucingku/agus/chibi_2.png" alt="Embedded System Developer" class="w-[200px] h-auto object-contain" />
+                    </div>
+                </div>
+
+                <!-- Card 3: Reverse Engineering -->
+                <div class="relative flex flex-col items-center md:items-start">
+                    <!-- Blue Arrow pointing down left -->
+                    <svg class="absolute -top-10 left-1/2 transform -translate-x-1/2 md:-translate-x-0 md:left-auto md:right-10 w-12 h-12" viewBox="0 0 50 50" fill="none" stroke="#2557a7" stroke-width="2" stroke-linecap="round">
+                        <path d="M40 10 Q 30 20 10 40 M10 40 L 25 35 M10 40 L 15 25" />
+                    </svg>
+                    <h3 class="text-xl font-bold text-sketchBlue uppercase mb-6 text-center md:text-left">REVERSE<br>ENGINEERING</h3>
+                    
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-4">
+                        <p class="text-sm text-gray-700 leading-relaxed max-w-[200px] text-center md:text-left mb-6 md:mb-0">
+                            Analyzing binaries, understanding systems, and reconstructing logic to solve complex problems and enhance security.
+                        </p>
+                        <!-- Chibi 3 -->
+                        <img src="https://ik.imagekit.io/menggokucingku/agus/chibi_3.png" alt="Reverse Engineering" class="w-[200px] h-auto object-contain" />
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- HORIZONTAL DIVIDER 2 -->
+        <div class="w-full flex justify-center mb-16 opacity-50">
+            <svg width="80%" height="10" viewBox="0 0 1000 10" preserveAspectRatio="none">
+                <path d="M0 5 Q 250 10 500 5 T 1000 5" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="5, 15"/>
+            </svg>
+        </div>
+
+        <!-- BOTTOM SECTION (About / Stats / Based In) -->
+        <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24">
+            
+            <!-- Column 1: About Me (span 4) -->
+            <div id="about" class="lg:col-span-3 flex flex-col relative">
+                <h3 class="text-xl font-bold tracking-widest uppercase mb-6 border-b-2 border-sketchDark inline-block w-max pb-1">ABOUT ME</h3>
+                <p class="text-sm text-gray-700 leading-relaxed mb-4">
+                    I'm a passionate developer who loves to build, explore, and solve real-world problems through technology.
+                </p>
+                <p class="text-sm text-gray-700 leading-relaxed mb-4">
+                    With more than 10 years in mobile app development and system engineering, I focus on clean architecture, performance, and user experience.
+                </p>
+                <p class="text-sm text-gray-700 leading-relaxed font-bold">
+                    Let's build something awesome together!
+                </p>
+                <div class="text-sketchBlue text-3xl font-bold mt-6 opacity-50">&lt;/&gt;</div>
+            </div>
+
+            <!-- Column 2: Stats (span 4) -->
+            <div class="lg:col-span-4 flex flex-col gap-6 pt-12">
+                <!-- Stat Item 1 -->
+                <div class="flex items-center gap-4">
+                    <div class="sketch-box-wavy text-sketchBlue">
+                        <svg class="wavy-border" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 8 Q8 3 15 4 Q22 2 28 5 Q35 3 40 6 Q46 9 46 15 Q48 22 46 28 Q48 35 45 40 Q42 46 36 46 Q28 48 22 46 Q15 48 10 45 Q4 42 4 36 Q2 28 4 22 Q2 15 5 8 Z" stroke="#1e293b" stroke-width="1.5" fill="none"/>
+                        </svg>
+                        <div class="font-mono font-bold relative z-10">&lt;/&gt;</div>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-sketchBlue uppercase">10+ YEARS</h4>
+                        <p class="text-xs text-gray-600">Experience in mobile</p>
+                    </div>
+                </div>
+                <!-- Stat Item 2 -->
+                <div class="flex items-center gap-4">
+                    <div class="sketch-box-wavy text-sketchBlue">
+                        <svg class="wavy-border" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 10 Q10 4 16 5 Q24 3 30 6 Q36 4 42 8 Q47 12 45 18 Q47 25 45 32 Q47 38 43 43 Q38 47 32 45 Q25 48 18 45 Q12 47 7 43 Q3 38 5 32 Q3 25 5 18 Q3 12 6 10 Z" stroke="#1e293b" stroke-width="1.5" fill="none"/>
+                        </svg>
+                        <i data-lucide="smartphone" class="w-6 h-6 relative z-10"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-sketchBlue uppercase">10+ PROJECTS</h4>
+                        <p class="text-xs text-gray-600">Successfully completed</p>
+                    </div>
+                </div>
+                <!-- Stat Item 3 -->
+                <div class="flex items-center gap-4">
+                    <div class="sketch-box-wavy text-sketchBlue">
+                        <svg class="wavy-border" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 9 Q12 3 18 5 Q25 2 32 5 Q38 3 43 7 Q48 12 46 19 Q48 26 46 33 Q48 40 44 44 Q39 48 33 46 Q26 49 19 46 Q13 48 8 44 Q3 39 5 33 Q2 26 5 19 Q3 13 7 9 Z" stroke="#1e293b" stroke-width="1.5" fill="none"/>
+                        </svg>
+                        <i data-lucide="users" class="w-6 h-6 relative z-10"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-sketchBlue uppercase">SATISFIED CLIENTS</h4>
+                        <p class="text-xs text-gray-600">Across industries</p>
+                    </div>
+                </div>
+                <!-- Stat Item 4 -->
+                <div class="flex items-center gap-4">
+                    <div class="sketch-box-wavy text-sketchBlue">
+                        <svg class="wavy-border" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 11 Q9 4 17 5 Q23 2 30 5 Q37 3 42 7 Q47 11 45 17 Q48 24 45 30 Q48 37 44 42 Q40 47 34 46 Q27 49 20 46 Q14 48 9 44 Q4 40 5 34 Q2 27 4 20 Q2 14 4 11 Z" stroke="#1e293b" stroke-width="1.5" fill="none"/>
+                        </svg>
+                        <i data-lucide="award" class="w-6 h-6 relative z-10"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-sketchBlue uppercase">LIFELONG LEARNER</h4>
+                        <p class="text-xs text-gray-600">Always improving & exploring</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 3: Based In (span 5) -->
+            <div id="portfolio" class="lg:col-span-5 flex flex-col relative">
+                <h3 class="text-xl font-bold tracking-widest uppercase mb-6 border-b-2 border-sketchDark inline-block w-max pb-1">BASED IN</h3>
+                
+                <!-- Bogor Sketch Illustration -->
+                <div class="w-full mb-4 relative">
+                    <img src="https://ik.imagekit.io/menggokucingku/agus/place_sketch.png" alt="Bogor Landscape" class="w-full h-auto object-contain" />
+                    
+                    <!-- Chibi waving -->
+                    <img src="https://ik.imagekit.io/menggokucingku/agus/chibi_4.png" alt="Agus Waving" class="absolute -bottom-6 -right-6 w-[150px] h-auto object-contain drop-shadow-md transform rotate-3" />
+                </div>
+
+                <div class="flex items-start gap-3 mt-4 pr-16"> <!-- Padding right to avoid chibi -->
+                    <i data-lucide="map-pin" class="w-6 h-6 text-sketchBlue flex-shrink-0 mt-1"></i>
+                    <div>
+                        <h4 class="text-lg font-bold text-sketchBlue uppercase">BOGOR, INDONESIA</h4>
+                        <p class="text-sm text-gray-700 leading-relaxed">
+                            Open for remote work and exciting opportunities around the world.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="contact" class="mb-12">
+            <!-- Brush stroke blue CTA box -->
+            <div class="w-full relative p-8 flex flex-col md:flex-row items-center justify-between gap-6" style="position: relative; z-index: 1;">
+                <!-- Brush stroke background -->
+                <div class="absolute inset-0 bg-sketchBlue" style="z-index: -1; clip-path: polygon(0% 15%, 1% 5%, 3% 1%, 8% 0%, 15% 1%, 25% 3%, 35% 1%, 45% 0%, 55% 2%, 65% 0%, 75% 1%, 85% 0%, 92% 2%, 97% 5%, 99% 12%, 100% 20%, 100% 35%, 99% 55%, 100% 75%, 100% 85%, 98% 93%, 95% 98%, 90% 100%, 82% 99%, 70% 97%, 58% 100%, 45% 99%, 32% 100%, 20% 98%, 10% 100%, 5% 98%, 2% 94%, 0% 85%, 0% 65%, 1% 45%, 0% 30%);"></div>
+                <div class="flex items-center gap-6 text-white">
+                    <div class="w-16 h-16 flex items-center justify-center flex-shrink-0 opacity-90" style="border: 2px solid rgba(255,255,255,0.5); border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;">
+                        <i data-lucide="mail" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-bold tracking-wide uppercase mb-1 text-white">HAVE A PROJECT IN MIND?</h2>
+                        <p class="text-white/80 text-sm">Let's work together and turn your ideas into reality.</p>
+                    </div>
+                </div>
+                
+                <a href="mailto:pymobile123@gmail.com" class="sketch-button-outline flex items-center gap-2 uppercase tracking-wide font-bold no-underline">
+                    LET'S TALK <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="text-center pb-8 flex flex-col items-center gap-2">
+            <!-- Mini Crown -->
+            <svg width="30" height="30" viewBox="0 0 50 50" fill="none" stroke="#1e293b" stroke-width="2" class="opacity-50">
+                <path d="M5 25 L15 10 L25 25 L35 10 L45 25 L40 40 L10 40 Z" />
+            </svg>
+            <p class="text-xs text-gray-500">&copy; 2026 Agus Ibrahim. All rights reserved.</p>
+        </footer>
+
+    </div>
+    </div><!-- end paper-card -->
+
+
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+
+    <!-- Spotlight Navigation Script -->
+    <script>
+        (function() {
+            let spotlightTimeout = null;
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('data-target');
+                    const targetEl = document.getElementById(targetId);
+                    if (!targetEl) return;
+
+                    // Clear any existing spotlight
+                    clearSpotlight();
+
+                    // Scroll smoothly to target
+                    targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                    // Wait for scroll to finish, then activate spotlight
+                    setTimeout(() => {
+                        document.body.classList.add('spotlight-active');
+
+                        // Find the parent section/direct-child that contains the target
+                        // and dim siblings. The target itself gets spotlighted.
+                        targetEl.classList.add('spotlighted');
+
+                        // If the target is NOT a direct child of content-layer,
+                        // also spotlight its parent section so it doesn't get dimmed
+                        const contentLayer = document.querySelector('.content-layer');
+                        let parent = targetEl.parentElement;
+                        while (parent && parent !== contentLayer) {
+                            parent = parent.parentElement;
+                        }
+                        // The direct child of content-layer that contains our target
+                        const directChildren = Array.from(contentLayer.children);
+                        for (const child of directChildren) {
+                            if (child.contains(targetEl)) {
+                                child.style.opacity = '1';
+                                child.style.filter = 'none';
+                                child.style.pointerEvents = 'auto';
+                                child.dataset.spotlightParent = 'true';
+                                break;
+                            }
+                        }
+
+                        // Auto-dismiss after 2 seconds
+                        spotlightTimeout = setTimeout(() => {
+                            clearSpotlight();
+                        }, 1000);
+                    }, 600);
+                });
+            });
+
+            // Click anywhere to dismiss
+            document.addEventListener('click', function(e) {
+                if (document.body.classList.contains('spotlight-active') && !e.target.closest('.nav-link')) {
+                    clearSpotlight();
+                }
+            });
+
+            function clearSpotlight() {
+                if (spotlightTimeout) {
+                    clearTimeout(spotlightTimeout);
+                    spotlightTimeout = null;
+                }
+                document.body.classList.remove('spotlight-active');
+                document.querySelectorAll('.spotlighted').forEach(el => {
+                    el.classList.remove('spotlighted');
+                });
+                document.querySelectorAll('[data-spotlight-parent]').forEach(el => {
+                    el.style.opacity = '';
+                    el.style.filter = '';
+                    el.style.pointerEvents = '';
+                    delete el.dataset.spotlightParent;
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
